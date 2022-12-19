@@ -1,0 +1,21 @@
+{
+  "folders": [
+    {
+      "name": " pnpm",
+      "path": "."
+    },
+    {
+      "name": "🚀 vite-react",
+      "path": "apps/vite"
+    },
+    {
+      "name": "🚀 vite-2",
+      "path": "apps/vite2"
+    },
+    {
+      "name": "📦 ts-lib",
+      "path": "shared/ts-lib"
+    }
+  ],
+  "settings": {}
+}

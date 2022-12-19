@@ -1,0 +1,7 @@
+{
+  "eslint.workingDirectories": [
+    "./shared/ts-lib",
+    "./apps/vite",
+    "./apps/vite2"
+  ]
+}

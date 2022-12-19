@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "a typescript-starter project",
   "main": "src/index.ts",
-  "typings": "build/main/index.d.ts",
   "module": "src/index.ts",
   "repository": "https://github.com/patryk0493/ts-lib",
   "license": "MIT",
