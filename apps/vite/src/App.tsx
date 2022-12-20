@@ -1,14 +1,41 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { power } from 'ts-lib';
+import { fetchSomeData, power, obs_v7_$ } from 'ts-lib';
+import { interval } from "rxjs";
+import { map } from "rxjs/operators";
 
 function App() {
   const [count, setCount] = useState(0)
+  const [data, setData] = useState();
+
+  useEffect(() => {
+
+    const stream$ = interval(1000).pipe(
+      map((a) => a * 1.6)
+    );
+
+    stream$.subscribe(console.warn);
+
+    obs_v7_$.subscribe({
+      next: (next) => {
+        console.log({ next });
+      },
+    });
+
+    fetchSomeData().then((res) => {
+      setData(res.data);
+    }).catch((e) => {
+      setData(e.data);
+    })
+  }, [setData])
 
   return (
     <div className="App">
       <div>
+        <details>
+          {JSON.stringify(data)}
+        </details>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
